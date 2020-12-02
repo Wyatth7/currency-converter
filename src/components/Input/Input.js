@@ -4,6 +4,7 @@ import axios from "axios";
 
 const Input = (props) => {
   const [titles, setTitles] = useState([]);
+  // const [codes, setCodes] = useState([]);
   const [sendAmount, setSendAmount] = useState("");
   const [sendFrom, setSendFrom] = useState("");
   const [sendTo, setSendTo] = useState("");
@@ -29,7 +30,7 @@ const Input = (props) => {
 
   const createTitleOptions = React.Children.toArray(
     titles.map((el) => {
-      return <option value={`${el}`}>{el}</option>;
+      return <option value={el.code}>{el.title}</option>;
     })
   );
 

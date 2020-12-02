@@ -1,4 +1,10 @@
+const fs = require("fs");
 const axios = require("axios");
+
+const currencySymbols = fs.readFileSync(
+  `${__dirname}/../dev-data/currency-name-symbol.json`,
+  "utf-8"
+);
 
 /**
  * Send currency data to client.
@@ -63,12 +69,43 @@ exports.getTitles = async (req, res, next) => {
   try {
     const titleData = await axios.get("https://api.exchangeratesapi.io/latest");
 
+    // Get currency abberviations
     let keys = Object.keys(titleData.data.rates);
     keys.push("EUR");
+    keys = keys.sort();
+
+    // Get currency symbols
+    let symbols = JSON.parse(currencySymbols);
+    symbols = Object.values(symbols);
+
+    // Push object with currency title and code to codeData Array
+    let codeData = [];
+    symbols.forEach((el) => {
+      keys.forEach((cur) => {
+        if (cur === el.code) {
+          codeData.push({
+            title: `${el.name} ${el.symbol}`,
+            code: el.code,
+          });
+        }
+      });
+    });
+
+    // Sort alphabetically based on title
+    codeData.sort((a, b) => {
+      if (a.title < b.title) {
+        return -1;
+      }
+      if (a.title > b.title) {
+        return 1;
+      }
+      return 0;
+    });
+
     res.status(200).json({
       status: "success",
       data: {
-        keys,
+        keys: codeData,
       },
     });
   } catch (err) {
