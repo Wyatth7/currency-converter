@@ -17,8 +17,6 @@ exports.getCurrency = async (req, res, next) => {
       return el.toFixed(2);
     });
 
-    console.log(currency.data);
-
     res.status(200).json({
       status: "success",
       data: {
@@ -35,7 +33,6 @@ exports.getCurrency = async (req, res, next) => {
 };
 
 exports.getUserQuery = async (req, res, next) => {
-  console.log(req.query);
   try {
     const currency = await axios.get(
       `https://api.exchangeratesapi.io/latest?base=${req.query.base}&symbols=${req.query.symbols}`
@@ -45,9 +42,6 @@ exports.getUserQuery = async (req, res, next) => {
     const rates = Object.values(currencyObj);
     let amount = +rates[0] * +req.query.amount;
     amount = amount.toFixed(2);
-    console.log(rates);
-
-    console.log(amount);
 
     res.status(200).json({
       status: "success",
@@ -71,7 +65,6 @@ exports.getTitles = async (req, res, next) => {
 
     let keys = Object.keys(titleData.data.rates);
     keys.push("EUR");
-    console.log(keys);
     res.status(200).json({
       status: "success",
       data: {

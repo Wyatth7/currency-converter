@@ -14,7 +14,6 @@ const Converter = (props) => {
       const data = await axios.get("/api/request/data/");
       setKeys(data.data.data.keys);
       setValues(data.data.data.values);
-      console.log(data);
     } catch (err) {
       console.log(err);
     }
