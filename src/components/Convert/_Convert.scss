@@ -1,0 +1,95 @@
+.Convert {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 55rem;
+  width: 45rem;
+  background-color: $auto-convert-bk;
+  color: $white;
+  box-shadow: 10px 8px 15px $box-shadows;
+  z-index: 100;
+
+  .video-background {
+    opacity: 0.4;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -99;
+  }
+  .video-foreground,
+  .video-background iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .name {
+    text-align: center;
+    h1 {
+      letter-spacing: 4px;
+      font-size: 7rem;
+    }
+    h4 {
+      font-size: 2rem;
+      font-weight: 200;
+    }
+  }
+
+  .conversion-section {
+    margin-top: 2rem;
+    animation: pulse-black 8s linear infinite;
+    animation: name duration timing-function delay iteration-count direction
+      fill-mode;
+
+    @keyframes pulse-black {
+      0%,
+      100% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+
+    .inputs {
+      display: flex;
+      justify-content: space-between;
+      font-size: 2rem;
+
+      .auto {
+        &--from,
+        &--to,
+        &--middle {
+          font-weight: 200;
+        }
+
+        &--from {
+          margin-right: 2rem;
+        }
+
+        &--to {
+          margin-left: 2rem;
+        }
+      }
+    }
+
+    .auto-result {
+      margin-top: 1rem;
+      text-align: center;
+
+      h3 {
+        font-size: 2rem;
+        font-weight: 200;
+      }
+    }
+  }
+}

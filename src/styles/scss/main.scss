@@ -1,0 +1,11 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400&display=swap");
+// Base
+@import "./base";
+@import "./variables";
+
+// Components
+@import "./../../App";
+@import "./../../components/Main/Main";
+@import "./../../components/Convert/Convert";
+@import "./../../components/Input/Input";

@@ -1,0 +1,65 @@
+.Input {
+  height: 49.9rem;
+  width: 45rem;
+  background-color: $white;
+  box-shadow: 3px 3px 10px $box-shadows;
+
+  form {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 3rem;
+
+    label {
+      font-size: 2rem;
+    }
+
+    select,
+    input {
+      width: 75%;
+      margin-bottom: 2rem;
+      padding: 1.5rem 1rem;
+      font-size: 2rem;
+      font-weight: 200;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: 2px solid $black;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    select {
+      cursor: pointer;
+    }
+
+    .item-selected {
+      border-bottom: 2px solid $green-bk;
+    }
+
+    .buttons {
+      display: flex;
+      &--convert-submit {
+        cursor: pointer;
+        padding: 0.5rem 2.5rem;
+        color: $white;
+        box-shadow: none;
+        text-decoration: none;
+        background-color: $red-btn;
+        border: none;
+        border-radius: 10px;
+        outline: none;
+        transition: all 0.2s;
+
+        &:hover {
+          background-color: lighten($color: $red-btn, $amount: 5);
+        }
+      }
+      .amount {
+        margin: auto 0 auto 2rem;
+        font-size: 2rem;
+      }
+    }
+  }
+}

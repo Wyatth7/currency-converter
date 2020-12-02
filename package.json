@@ -2,20 +2,30 @@
   "name": "currency-converter",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8000/",
+  "homepage": ".",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.3.0",
+    "axios": "^0.21.0",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "node-sass": "^5.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
+    "sass": "^1.29.0",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server:dev": "nodemon server/server.js",
+    "comp:sass": "node-sass src/styles/scss/main.scss src/styles/css/styles.css -w"
   },
   "eslintConfig": {
     "extends": [
