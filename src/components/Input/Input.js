@@ -85,7 +85,7 @@ const Input = (props) => {
           defaultValue="Select a currency"
         >
           <option disabled value="Select a currency">
-            Select a currency
+            From: Select a value
           </option>
           {createTitleOptions}
         </select>
@@ -96,7 +96,7 @@ const Input = (props) => {
           name="currencies"
         >
           <option disabled value="Select a currency">
-            Select a currency
+            To: Select a value
           </option>
           {createTitleOptions}
         </select>
