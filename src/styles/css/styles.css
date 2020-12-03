@@ -1,9 +1,17 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400&display=swap");
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
 
@@ -12,6 +20,7 @@ html {
 }
 
 body {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Nunito Sans", sans-serif;
 }
@@ -23,21 +32,37 @@ body {
 .Main {
   height: 100%;
   background-color: #f7edd5;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
 .Convert {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   height: 55rem;
   width: 45rem;
   background-color: #000000d9;
   color: #fff;
+  -webkit-box-shadow: 10px 8px 15px #00000033;
   box-shadow: 10px 8px 15px #00000033;
   z-index: 100;
 }
@@ -74,9 +99,22 @@ body {
 }
 .Convert .conversion-section {
   margin-top: 2rem;
+  -webkit-animation: pulse-black 8s linear infinite;
   animation: pulse-black 8s linear infinite;
+  -webkit-animation: name duration timing-function delay iteration-count
+    direction fill-mode;
   animation: name duration timing-function delay iteration-count direction
     fill-mode;
+}
+
+@-webkit-keyframes pulse-black {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 @keyframes pulse-black {
@@ -89,7 +127,11 @@ body {
   }
 }
 .Convert .conversion-section .inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   font-size: 2rem;
 }
@@ -117,12 +159,20 @@ body {
   height: 49.9rem;
   width: 45rem;
   background-color: #fff;
+  -webkit-box-shadow: 3px 3px 10px #00000033;
   box-shadow: 3px 3px 10px #00000033;
 }
 .Input form {
   height: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   margin-left: 3rem;
 }
@@ -146,6 +196,8 @@ body {
   border-right: none;
   border-bottom: 2px solid #000;
   outline: none;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
   transition: all 0.2s;
 }
 .Input form select {
@@ -155,18 +207,23 @@ body {
   border-bottom: 2px solid #1283da;
 }
 .Input form .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 .Input form .buttons--convert-submit {
   cursor: pointer;
   padding: 0.5rem 2.5rem;
   color: #fff;
+  -webkit-box-shadow: none;
   box-shadow: none;
   text-decoration: none;
   background-color: #f95959;
   border: none;
   border-radius: 10px;
   outline: none;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
   transition: all 0.2s;
 }
 .Input form .buttons--convert-submit:hover {
@@ -180,6 +237,9 @@ body {
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .Main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
   }
   .Convert {
@@ -190,6 +250,8 @@ body {
     height: 100%;
   }
   .Input form {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     margin-left: 0;
     padding: 0 1rem;
@@ -211,6 +273,8 @@ body {
     width: 100%;
   }
   .Input form {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     margin-left: 0;
     padding: 0 1rem;
@@ -223,6 +287,9 @@ body {
 
 @media only screen and (max-with: 812px) and (max-height: 375px) and (orientation: landscape) {
   .Main {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
   }
   .Convert {
