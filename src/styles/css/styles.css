@@ -4,177 +4,285 @@
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: inherit; }
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+}
 
 body {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: "Nunito Sans", sans-serif; }
+  font-family: "Nunito Sans", sans-serif;
+}
 
 .App {
-  height: 100vh; }
+  height: 100vh;
+}
 
 .Main {
   height: 100%;
   background-color: #f7edd5;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
-  align-items: center; }
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
 
 .Convert {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   height: 55rem;
   width: 45rem;
   background-color: #000000d9;
   color: #fff;
+  -webkit-box-shadow: 10px 8px 15px #00000033;
   box-shadow: 10px 8px 15px #00000033;
-  z-index: 100; }
-  .Convert .video-background {
-    opacity: 0.4;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -99; }
-  .Convert .video-foreground,
-  .Convert .video-background iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none; }
-  .Convert .name {
-    text-align: center; }
-    .Convert .name h1 {
-      letter-spacing: 4px;
-      font-size: 7rem; }
-    .Convert .name h4 {
-      font-size: 2rem;
-      font-weight: 200; }
-  .Convert .conversion-section {
-    margin-top: 2rem;
-    animation: pulse-black 8s linear infinite;
-    animation: name duration timing-function delay iteration-count direction fill-mode; }
+  z-index: 100;
+}
+.Convert .video-background {
+  opacity: 0.4;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -99;
+}
+.Convert .video-foreground,
+.Convert .video-background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.Convert .name {
+  text-align: center;
+}
+.Convert .name h1 {
+  letter-spacing: 4px;
+  font-size: 7rem;
+}
+.Convert .name h4 {
+  font-size: 2rem;
+  font-weight: 200;
+}
+.Convert .conversion-section {
+  margin-top: 2rem;
+  -webkit-animation: pulse-black 8s linear infinite;
+  animation: pulse-black 8s linear infinite;
+  -webkit-animation: name duration timing-function delay iteration-count
+    direction fill-mode;
+  animation: name duration timing-function delay iteration-count direction
+    fill-mode;
+}
+
+@-webkit-keyframes pulse-black {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
 
 @keyframes pulse-black {
   0%,
   100% {
-    opacity: 0; }
+    opacity: 0;
+  }
   50% {
-    opacity: 1; } }
-    .Convert .conversion-section .inputs {
-      display: flex;
-      justify-content: space-between;
-      font-size: 2rem; }
-      .Convert .conversion-section .inputs .auto--from, .Convert .conversion-section .inputs .auto--to, .Convert .conversion-section .inputs .auto--middle {
-        font-weight: 200; }
-      .Convert .conversion-section .inputs .auto--from {
-        margin-right: 2rem; }
-      .Convert .conversion-section .inputs .auto--to {
-        margin-left: 2rem; }
-    .Convert .conversion-section .auto-result {
-      margin-top: 1rem;
-      text-align: center; }
-      .Convert .conversion-section .auto-result h3 {
-        font-size: 2rem;
-        font-weight: 200; }
+    opacity: 1;
+  }
+}
+.Convert .conversion-section .inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: 2rem;
+}
+.Convert .conversion-section .inputs .auto--from,
+.Convert .conversion-section .inputs .auto--to,
+.Convert .conversion-section .inputs .auto--middle {
+  font-weight: 200;
+}
+.Convert .conversion-section .inputs .auto--from {
+  margin-right: 2rem;
+}
+.Convert .conversion-section .inputs .auto--to {
+  margin-left: 2rem;
+}
+.Convert .conversion-section .auto-result {
+  margin-top: 1rem;
+  text-align: center;
+}
+.Convert .conversion-section .auto-result h3 {
+  font-size: 2rem;
+  font-weight: 200;
+}
 
 .Input {
   height: 49.9rem;
   width: 45rem;
   background-color: #fff;
-  box-shadow: 3px 3px 10px #00000033; }
-  .Input form {
-    height: inherit;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 3rem; }
-    .Input form label {
-      font-size: 2rem; }
-    .Input form select,
-    .Input form input {
-      width: 75%;
-      margin-bottom: 2rem;
-      padding: 1.5rem 1rem;
-      font-size: 2rem;
-      font-weight: 200;
-      border-top: none;
-      border-left: none;
-      border-right: none;
-      border-bottom: 2px solid #000;
-      outline: none;
-      transition: all 0.2s; }
-    .Input form select {
-      cursor: pointer; }
-    .Input form .item-selected {
-      border-bottom: 2px solid #1283da; }
-    .Input form .buttons {
-      display: flex; }
-      .Input form .buttons--convert-submit {
-        cursor: pointer;
-        padding: 0.5rem 2.5rem;
-        color: #fff;
-        box-shadow: none;
-        text-decoration: none;
-        background-color: #f95959;
-        border: none;
-        border-radius: 10px;
-        outline: none;
-        transition: all 0.2s; }
-        .Input form .buttons--convert-submit:hover {
-          background-color: #fa7272; }
-      .Input form .buttons .amount {
-        margin: auto 0 auto 2rem;
-        font-size: 2rem; }
+  -webkit-box-shadow: 3px 3px 10px #00000033;
+  box-shadow: 3px 3px 10px #00000033;
+}
+.Input form {
+  height: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-left: 3rem;
+}
+.Input form label {
+  font-size: 2rem;
+}
+.Input form select,
+.Input form input {
+  width: 75%;
+  margin-bottom: 2rem;
+  padding: 1.5rem 1rem;
+  font-size: 2rem;
+  font-weight: 200;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid #000;
+  outline: none;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.Input form select {
+  cursor: pointer;
+}
+.Input form .item-selected {
+  border-bottom: 2px solid #1283da;
+}
+.Input form .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.Input form .buttons--convert-submit {
+  cursor: pointer;
+  padding: 0.5rem 2.5rem;
+  color: #fff;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-decoration: none;
+  background-color: #f95959;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.Input form .buttons--convert-submit:hover {
+  background-color: #fa7272;
+}
+.Input form .buttons .amount {
+  margin: auto 0 auto 2rem;
+  font-size: 2rem;
+}
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .Main {
-    flex-direction: column; }
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
   .Convert {
-    width: 100%; }
+    width: 100%;
+  }
   .Input {
     width: 100%;
-    height: 100%; }
-    .Input form {
-      justify-content: center;
-      margin-left: 0;
-      padding: 0 1rem; }
-      .Input form select,
-      .Input form input {
-        width: 100%; } }
+    height: 100%;
+  }
+  .Input form {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-left: 0;
+    padding: 0 1rem;
+  }
+  .Input form select,
+  .Input form input {
+    width: 100%;
+  }
+}
 
 /* Smartphones (landscape) ----------- */
 @media only screen and (min-width: 321px) and (max-width: 811px) {
   .Convert {
     height: 100%;
-    width: 100%; }
+    width: 100%;
+  }
   .Input {
     height: 100%;
-    width: 100%; }
-    .Input form {
-      justify-content: center;
-      margin-left: 0;
-      padding: 0 1rem; }
-      .Input form select,
-      .Input form input {
-        width: 100%; } }
+    width: 100%;
+  }
+  .Input form {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-left: 0;
+    padding: 0 1rem;
+  }
+  .Input form select,
+  .Input form input {
+    width: 100%;
+  }
+}
 
 @media only screen and (max-with: 812px) and (max-height: 375px) and (orientation: landscape) {
   .Main {
-    flex-direction: row; }
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
   .Convert {
     margin-top: 3rem;
     width: 100%;
-    height: 100%; } }
+    height: 100%;
+  }
+}
