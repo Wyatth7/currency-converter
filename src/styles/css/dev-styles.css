@@ -102,6 +102,8 @@ body {
     margin-left: 3rem; }
     .Input form label {
       font-size: 2rem; }
+    .Input form #searchform input {
+      appearance: none; }
     .Input form select,
     .Input form input {
       width: 75%;
