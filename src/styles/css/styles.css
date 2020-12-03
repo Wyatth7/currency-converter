@@ -130,6 +130,8 @@ body {
   font-size: 2rem;
 }
 .Input form #searchform input {
+  -moz-appearance: none;
+  -webkit-appearance: none;
   appearance: none;
 }
 .Input form select,
