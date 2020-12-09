@@ -91,7 +91,7 @@ app.all("*", (req, res, next) => {
 });
 ````
 
-### `/api/equest/data`
+### `/api/request/data`
 Base path for recieveing currency data.
 
 #### `/`
